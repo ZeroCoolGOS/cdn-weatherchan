@@ -470,7 +470,7 @@ def weather_page(PageColour, PageNum):
 
     # create the canvas for middle page text
 
-    weather = Canvas(root, height=290, width=720, bg=PageColour)
+    weather = Canvas(root, height=600, width=1024, bg=PageColour)
     weather.place(x=0, y=95)
     weather.config(highlightbackground=PageColour)
     
@@ -577,9 +577,9 @@ def bottom_marquee(grouptotal):
     group = 1
 
     # scrolling text canvas
-    marquee = Canvas(root, height=120, width=580, bg="green")
+    marquee = Canvas(root, height=120, width=864, bg="green")
     marquee.config(highlightbackground="green")
-    marquee.place(x=80, y=390)
+    marquee.place(x=80, y=700)
 
     # read in RSS data and prepare it
     width = 35
@@ -587,8 +587,7 @@ def bottom_marquee(grouptotal):
     for r in range(width): #create an empty string of 35 characters
         pad = pad + " " 
 
-    url = "https://winnipeg.ca/interhom/RSS/RSSNewsTopTen.xml"
-    url = "https://globalnews.ca/winnipeg/feed/"
+    url = "https://globalnews.ca/bc/feed/"
     wpg = feedparser.parse(url)
     print(time.strftime("%H:%M.") + prog + ver + ".BOTTOM_MARQUEE-RSS feed refreshed")
 
@@ -714,10 +713,11 @@ def word_short(phrase, length):
 
 # setup root
 root = Tk()
-# # root.attributes('-fullscreen',True)
-root.geometry("720x480") # this must be 720x480 for a proper filled out screen on composite output. 640x480 will have black bar on RH side. use 720x576 for PAL.
+#root.attributes('-fullscreen',True)
+# root.geometry("720x480") # this must be 720x480 for a proper filled out screen on composite output. 640x480 will have black bar on RH side. use 720x576 for PAL.
+root.geometry("1024x768") 
 root.config(cursor="none", bg="green")
-root.wm_title("wpg-weatherchan")
+root.wm_title("van-weatherchan")
 
 # Clock - Top RIGHT
 # this got complicated due to the new font (7-Segment Normal), which doesn't have proper colon(:) char, 
@@ -788,16 +788,18 @@ PageNum = 1
 weather_page(PageColour, PageNum)
 
 # Generate background music playlist
-# # print(time.strftime("%H:%M.") + prog + ver + ".ROOT-launching playlist generator")
-# # musicpath = "/home/probnot/WeatherPi/music" # must show full path
-# # playlist = playlist_generator(musicpath) # generate playlist array
-# # random.shuffle(playlist) # shuffle playlist
+print(time.strftime("%H:%M.") + prog + ver + ".ROOT-launching playlist generator")
+# musicpath = "/home/probnot/WeatherPi/music" # must show full path
+# musicpath = "%PWD/music" # must show full path
+musicpath = "/home/pi/Downloads/git/github/zerocoolgos/cdn-weatherchan/music" # must show full path
+playlist = playlist_generator(musicpath) # generate playlist array
+random.shuffle(playlist) # shuffle playlist
 
-# # # Play background music on shuffle using pygame
-# # print(time.strftime("%H:%M.") + prog + ver + ".ROOT-launching background music")
-# # songNumber = 1
-# # pygame.mixer.init()
-# # music_player(songNumber, playlist, musicpath)
+# Play background music on shuffle using pygame
+print(time.strftime("%H:%M.") + prog + ver + ".ROOT-launching background music")
+songNumber = 1
+pygame.mixer.init()
+music_player(songNumber, playlist, musicpath)
 
 # Bottom Scrolling Text (City of Winnipeg RSS Feed)
 print(time.strftime("%H:%M.") + prog + ver + ".ROOT-launching bottom_marquee")
