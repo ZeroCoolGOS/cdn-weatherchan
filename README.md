@@ -4,6 +4,10 @@ This creates the old-school looking weather channel that was common on Winnipeg 
 ![Example of the result, captured from the analog video output](https://github.com/probnot/wpg-weatherchan/blob/master/example1.jpg?raw=true)
 ![Example of the result, captured from the analog video output](https://github.com/probnot/wpg-weatherchan/blob/master/example2.jpg?raw=true)
 
+## YouTube Links
+[Winnipeg Weather Channel (on a raspberry pi) V2](https://www.youtube.com/watch?v=6y-Yg_DNd9k)
+
+
 ## Usage
 
 This was written in Python 3.x
