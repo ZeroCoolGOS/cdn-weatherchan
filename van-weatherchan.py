@@ -51,6 +51,8 @@ def weather_page(PageColour, PageNum):
 
     PageTotal = 13
 
+    global s1
+
     if (PageNum == 1):
         
         # ===================== Screen 1 =====================
@@ -454,7 +456,6 @@ def weather_page(PageColour, PageNum):
         s6 = "16   80s Sitcoms    [ANALOG]"
         s7 = "22   90s Sitcoms    [ANALOG]"
         s8 = "24   GLOBAL (CKND)  [ANALOG]" 
-
         
     elif (PageNum == 13):    
         
