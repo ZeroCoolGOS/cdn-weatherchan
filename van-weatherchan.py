@@ -49,7 +49,8 @@ def weather_page(PageColour, PageNum):
     months = [" ", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]    
     linebreak = ['\n']
 
-    PageTotal = 13
+    # PageTotal = 13
+    PageTotal = 2
 
     global s1
     global s2
@@ -59,6 +60,8 @@ def weather_page(PageColour, PageNum):
     global s6
     global s7
     global s8
+    global text_forecast = "test"
+    s1 = "dump"
 
     if (PageNum == 1):
         
