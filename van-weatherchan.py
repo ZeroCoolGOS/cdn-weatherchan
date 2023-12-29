@@ -52,6 +52,13 @@ def weather_page(PageColour, PageNum):
     PageTotal = 13
 
     global s1
+    global s2
+    global s3
+    global s4
+    global s5
+    global s6
+    global s7
+    global s8
 
     if (PageNum == 1):
         
