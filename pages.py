@@ -1,5 +1,8 @@
+import textwrap # used to format forecast text
+
+
 # function
-def displayPage2():
+def displayPage2(ec_en_wpg):
     # ===================== Screen 2 =====================
     # text forecast for 5 days - page 1 of 3
     #print(time.strftime("%H:%M.") + prog + ver + ".WEATHER_PAGE-display page " + str(PageNum))   

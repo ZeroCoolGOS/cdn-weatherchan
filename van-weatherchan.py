@@ -127,7 +127,7 @@ def weather_page(PageColour, PageNum):
         s8 = ("PRESSURE " + pressure + " KPA AND " + tendency.upper()).center(35," ")
 
     elif (PageNum == 2):
-        displayPage2()
+        displayPage2(ec_en_wpg)
 
         # # ===================== Screen 2 =====================
         # # text forecast for 5 days - page 1 of 3
