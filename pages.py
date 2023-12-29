@@ -7,6 +7,10 @@ def displayPage2(ec_en_wpg):
     # text forecast for 5 days - page 1 of 3
     #print(time.strftime("%H:%M.") + prog + ver + ".WEATHER_PAGE-display page " + str(PageNum))   
 
+    global s1
+
+    linebreak = ['\n']
+
     # pull text forecasts from env_canada
     wsum_day1 = textwrap.wrap(ec_en_wpg.conditions["text_summary"]["value"].upper(), 35)
     wsum_day2 = textwrap.wrap(ec_en_wpg.daily_forecasts[1]["period"].upper() + ".." + ec_en_wpg.daily_forecasts[1]["text_summary"].upper(), 35)
